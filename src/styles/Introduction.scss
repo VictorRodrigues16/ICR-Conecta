@@ -1,0 +1,44 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+section#introduction{
+    background-image: url(../assets/fundo-sec1.svg);
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    
+}
+
+#tittle-intro{
+    color: #FFF8E7;
+    font-family: Nunito Sans; 
+    line-height: 60px;
+    
+    h1{
+        font-weight: 900;
+        font-size: 7.5rem; 
+    }
+
+    p{
+        font-weight: bold;
+        font-size: 4.3rem; 
+    }
+}
+
+
+
+

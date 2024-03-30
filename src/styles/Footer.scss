@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+footer{
+    background-color: #3284AE;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding: 10rem;
+
+    #info-footer{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    
+        p{
+            font-family: Nunito Sans;
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            width: 25rem;
+        }
+    }
+}
+
+
+#social-medias{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    img{
+        width: 10rem;
+    }
+}
+
+#logo-icr img{
+    width: 45rem;
+}
