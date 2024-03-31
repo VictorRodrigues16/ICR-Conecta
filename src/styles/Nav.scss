@@ -19,6 +19,10 @@ nav{
     img{
         width: 23rem;
     }
+
+    h1{
+        display: none;
+    }
 }
 
 
@@ -69,4 +73,34 @@ nav{
 #nav-button:hover{
     background-color: #f3d795;
     color: #3284AE;
+}
+
+
+@media screen and (max-width: 500px) {
+    #list-nav, button{
+        display: none;
+        
+    }
+
+    nav{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 1rem;
+        img{
+            width: 20rem;
+        }
+
+        h1{
+            display: flex;
+        }
+    }
+
+    #cont-nav{
+        display: flex;
+        align-items: center;
+        gap: 10rem;
+    }
+    
+
 }

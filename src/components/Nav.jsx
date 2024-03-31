@@ -8,7 +8,8 @@ export default function Nav() {
         <header>
             <nav>
                 <div id="cont-nav">
-                    <img src={img} alt="img-nav"/>
+                    <h1>barra</h1>
+                    <img id='icon-nav' src={img} alt="img-nav"/>
                     <ul id="list-nav">
                         <li className="nav-li">Início</li>
                         <li className="nav-li">Sobre o ICR</li>

@@ -35,7 +35,7 @@ export default function DiscoverApp() {
                 <div className="box-info">
                     <img src={globe} alt="globe-icon" />
                     <h1>Mapas</h1>
-                    <p>
+                    <p id="p2">
                         Encontre facilmente departamentos, salas e 
                         serviços dentro do nosso hospital com a 
                         funcionalidade de mapas interativos.
