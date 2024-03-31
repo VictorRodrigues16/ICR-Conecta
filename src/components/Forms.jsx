@@ -9,7 +9,6 @@ export default function Forms() {
             <h1 id="contact-us-tittle">CONTATE-NOS</h1>
             <div id="forms-format">
                 <div id="content-left">
-
                     <h2>Fale com a gente</h2>
 
                     <div id="form-cont1">

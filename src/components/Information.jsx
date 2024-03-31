@@ -10,29 +10,36 @@ import info6 from "../assets/info6.svg"
 export default function Information() {
     return (
         <>
-        <section id="information">
-        <div id="tittle-info">
-            <h1>FIQUE POR DENTRO!</h1>
-            <p>Entenda mais sobre <span className="blue-info">exames, rotas e atividades do ICR</span></p>
-        </div>
+            <section id="information">
+                <div id="tittle-info">
+                    <h1>FIQUE POR DENTRO!</h1>
+                    <p>Entenda mais sobre <span className="blue-info">exames, rotas e atividades do ICR</span></p>
+                </div>
 
-        <div className="container">
-            <div className="first">
-                <img src={info1} alt="info1" />
-                <img src={info2} alt="info2" />
-                <img src={info3} alt="info3" />
-            </div>
+                <div id="cont-info1" className="container">
+                    <div className="first">
+                        <img src={info1} alt="info1" className="desktop-img" />
+                        <img src={info2} alt="info2" className="desktop-img" />
+                        <img src={info3} alt="info3" className="desktop-img" />
+                    </div>
+                    <div className="second">
+                        <img src={info4} alt="info4" className="desktop-img" />
+                        <img src={info5} alt="info5" className="desktop-img" />
+                        <img src={info6} alt="info6" className="desktop-img" />
+                    </div>
+                </div>
 
-            <div className="second">
-                <img src={info4} alt="info4" />
-                <img src={info5} alt="info5" />
-                <img src={info6} alt="info6" />
-            </div>
-        </div>
-        
-        </section>
-        
+                {/* Novo container para dispositivos móveis */}
+                <div className="mobile-container">
+                    <img src={info1} alt="info1" />
+                    <img src={info2} alt="info2" />
+                    <img src={info3} alt="info3" />
+                    <img src={info4} alt="info4" />
+                    <img src={info5} alt="info5" />
+                    <img src={info6} alt="info6" />
+                </div>
+            </section>
         </>
-    )
-
+    );
 }
+
