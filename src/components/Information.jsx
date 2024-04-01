@@ -6,7 +6,6 @@ import info4 from "../assets/info4.svg"
 import info5 from "../assets/info5.svg"
 import info6 from "../assets/info6.svg"
 
-
 export default function Information() {
     return (
         <>
@@ -16,30 +15,40 @@ export default function Information() {
                     <p>Entenda mais sobre <span className="blue-info">exames, rotas e atividades do ICR</span></p>
                 </div>
 
-                <div id="cont-info1" className="container">
-                    <div className="first">
-                        <img src={info1} alt="info1" className="desktop-img" />
-                        <img src={info2} alt="info2" className="desktop-img" />
-                        <img src={info3} alt="info3" className="desktop-img" />
-                    </div>
-                    <div className="second">
-                        <img src={info4} alt="info4" className="desktop-img" />
-                        <img src={info5} alt="info5" className="desktop-img" />
-                        <img src={info6} alt="info6" className="desktop-img" />
-                    </div>
-                </div>
+                <div id="all-infos">
+                    <div id="cont-info1" className="container">
+                        <div className="first">
 
-                {/* Novo container para dispositivos móveis */}
-                <div className="mobile-container">
-                    <img src={info1} alt="info1" />
-                    <img src={info2} alt="info2" />
-                    <img src={info3} alt="info3" />
-                    <img src={info4} alt="info4" />
-                    <img src={info5} alt="info5" />
-                    <img src={info6} alt="info6" />
+                            <div id="desk-images">
+                                <img src={info1} alt="info1" className="desktop-img" />
+                                <img src={info2} alt="info2" className="desktop-img" />
+                                <img src={info3} alt="info3" className="desktop-img" />
+                                <img src={info4} alt="info4" className="desktop-img" />
+                                <img src={info5} alt="info5" className="desktop-img" />
+                                <img src={info6} alt="info6" className="desktop-img" />
+                            </div>
+                            
+
+                            <div id="mobile-images">
+                                <div className="mobile-cont">
+                                    <img src={info1} alt="info1" className="mobile-img" />
+                                    <img src={info2} alt="info2" className="mobile-img" />
+                                    <img src={info3} alt="info1" className="mobile-img" />
+                                </div>
+
+                                <div className="mobile-cont">
+                                    
+                                    <img src={info4} alt="info2" className="mobile-img" />
+                                    <img src={info5} alt="info1" className="mobile-img" />
+                                    <img src={info6} alt="info2" className="mobile-img" />
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>
     );
 }
-

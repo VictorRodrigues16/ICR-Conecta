@@ -14,6 +14,7 @@ section#form{
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    width: 100%;
 }
 #contact-us-tittle {
     display: flex;
@@ -22,10 +23,13 @@ section#form{
     color: #3284AE;
 }
 
+
+
 div#forms-format {
     display: flex;
     justify-content: space-around;
-    gap: 25rem;
+    
+    
 
 
     #message {
@@ -107,7 +111,7 @@ div#forms-format {
   
   
   .form-input {
-    width: 75rem;
+    width: 100%;
     padding: 2rem; 
     border: none;
     font-size: 1rem;
