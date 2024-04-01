@@ -28,7 +28,7 @@ export default function Download() {
                 <button id="baixar-agora">BAIXE AGORA</button>
             </div>
 
-                <img src={doctor} alt="" />
+                <img src={doctor} alt="doctor-cell" />
         </section>
 
         <section id="download2">

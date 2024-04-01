@@ -54,6 +54,7 @@ section#download{
 
 .conecta{
     background-color: #FFA561;
+    color: #001B42;
     padding: 0rem 1rem 0rem 1rem;
 
 }
@@ -76,6 +77,55 @@ section#download{
     color: #3284AE;
 }
 
+@media screen and (max-width: 768px) {
+    section#download{
+
+        padding: 3rem;
+        padding-top: 7rem;
+
+        img{
+            width: 25rem;
+        }
+
+        h1{
+            display: flex;
+            flex-direction: column;
+            font-size: 4.2rem;
+            font-weight: 800;
+            gap: 1rem;
+        }
+
+        #cont2 p{
+            color: #001B42;
+            font-size: 2.2rem;
+            font-weight: 600;
+            width: 30rem;
+        }
+
+        #cont-download{
+            gap: 2rem;
+    
+        }
+    }
+    
+    .app .conecta{
+        padding: 0rem 1rem 0rem 1rem;
+        width: 33rem;
+    }
+
+    #baixar-agora{
+        padding: 1.2rem 1rem;
+        background-color: #3284AE;
+        border: none;
+        border-radius: 15px;
+        color: #FFF8E7;
+        font-weight: bold;
+        font-family: Open Sans;
+        font-size: 2.4rem;
+        transition: .6s;
+        cursor: pointer;
+    }
+}
 
 
 @media screen and (max-width: 500px) {
@@ -130,9 +180,9 @@ section#download{
                 gap: 0.3rem;
                 flex-direction: column;
                 justify-content: center;
-                color: #001B42;
+                color: #062044;
                 font-size: 1.3rem;
-                font-weight: 600;
+                font-weight: bold;
                 width: 20rem;
             }
         }
@@ -163,3 +213,5 @@ section#download{
 
     
 }
+
+

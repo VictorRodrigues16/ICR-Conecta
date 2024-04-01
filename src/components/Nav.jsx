@@ -7,8 +7,9 @@ export default function Nav() {
         <>
         <header>
             <nav>
+                
                 <div id="cont-nav">
-                    <h1>barra</h1>
+                    
                     <img id='icon-nav' src={img} alt="img-nav"/>
                     <ul id="list-nav">
                         <li className="nav-li">Início</li>

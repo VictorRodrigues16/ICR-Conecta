@@ -64,11 +64,69 @@ section#Ourapp{
 }
 
 
+@media screen and (max-width: 768px){
+    section#Ourapp{
+        padding-top: 2.4rem;
+        justify-content: space-around;
+        gap: 0;
+    }
+    #cont-app{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        color: #001B42;
+        font-family: Nunito Sans;
+        padding-bottom: 5rem;
+        
+    
+        #tittle1{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-weight: bold;
+     
+    
+            h2{
+                font-size: 2.8rem;
+            }
+    
+            h1{
+                font-size: 4.3rem;
+                
+                font-weight: 800;
+            }
+    
+        }
+        #tittle2 p{
+            width: 30rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #001B42;
+        }
+        
+        #tittle3 p{
+            width: 30rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3284AE;
+        }
+    }
+
+    #cell-app{
+        width: 30rem;
+    }
+
+    #icr{
+        background-color: #FFA561;
+        text-align: center;
+        border-radius: 3px;
+        width: 30rem;
+    }
+}
+
 @media screen and (max-width: 500px) {
 
-    :root {
-        font-size: 62.5%;
-    }
 
     section#Ourapp{
         display: flex;
@@ -77,7 +135,6 @@ section#Ourapp{
         align-items: center;
         width: 100%;
         padding: 0;
-        padding: 3rem 0rem 0rem 0rem;
         font-family: Nunito Sans;
         
         

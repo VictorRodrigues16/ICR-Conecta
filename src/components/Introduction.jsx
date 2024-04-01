@@ -4,12 +4,14 @@ export default function Introduction() {
     return (
         <>
         <section id="introduction">
-        
-        <div id="tittle-intro">
-            <h1>Conecte-se, aprenda e inspire</h1>
-            <p>sua plataforma para a saúde</p>
-        </div>
-        <span>bolinhas</span>
+            <div id="cont-intro">
+                <div  id="tittle-intro">
+                    <h1>Conecte-se, aprenda e inspire</h1>
+                    <p>sua plataforma para a saúde</p>
+                </div>
+                <span>bolinhas</span>
+            </div>
+            
         </section>
         
         </>

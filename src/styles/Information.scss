@@ -25,6 +25,7 @@ section#information{
     font-family: Nunito Sans;
     color: #3284AE;
 
+
     #tittle-info{
         display: flex;
         flex-direction: column;
@@ -53,12 +54,17 @@ section#information{
     }
 }
 
+.mobile-container {
+    display: none; /* Oculta o container móvel por padrão */
+}
+
 
 @media screen and (max-width: 500px) {
 
     
     section#information{
         gap: 1rem;
+        width: 100%;
 
         #tittle-info{
             gap: 1rem;
@@ -86,7 +92,7 @@ section#information{
 
         img{
             width: 18rem; 
-        border-radius: 10px;
+            border-radius: 10px;
         }
         
     }
@@ -96,3 +102,6 @@ section#information{
 }
 
 
+@media screen and (max-width: 768px) {
+        
+}

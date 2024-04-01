@@ -13,8 +13,9 @@ nav{
     display: flex;
     justify-content:  space-around;
     align-items: center;
-    gap: 26rem;
+    gap: 1rem;
     padding: 1rem;
+    width: 100%;
 
     img{
         width: 23rem;
@@ -28,14 +29,14 @@ nav{
 
 #cont-nav{
     display: flex;
-    gap: 7rem;
+    gap: 4rem;
     
 }
 
 #list-nav{
     display: flex;
     align-items: center;
-    gap: 6rem;
+    gap: 3rem;
 }
 .nav-li{
     list-style: none;
@@ -76,6 +77,77 @@ nav{
 }
 
 
+
+
+@media screen and (max-width: 768px) {
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+        gap: 0;
+    
+        img{
+            width: 16rem;
+        }
+
+        
+
+    }
+
+    .nav-li{
+        list-style: none;
+        font-family: Manrope;
+        color: #3284AE;
+        font-size: 1.7rem;
+        font-weight: 600;
+        transition: .2s;
+        cursor: pointer;
+        background-image: linear-gradient(to right, #056da1, #3284AE); 
+        background-repeat: no-repeat;
+        background-size: 0% 3px;
+        background-position: left bottom;
+        transition: .4s ease;
+    
+    }
+
+    .nav-li:hover{
+        background-size: 100% 2px;
+    }
+
+    #list-nav{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #cont-nav{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #nav-button{
+        padding: 1rem 2rem;
+        background-color: #3284AE;
+        border: none;
+        border-radius: 7px;
+        color: #FFF8E7;
+        font-weight: bold;
+        font-family: Open Sans;
+        font-size: 1.3rem;
+        transition: .4s;
+        cursor: pointer;
+    }
+    
+    #nav-button:hover{
+        background-color: #f3d795;
+        color: #3284AE;
+    }
+}
+
+
 @media screen and (max-width: 500px) {
     #list-nav, button{
         display: none;
@@ -84,23 +156,21 @@ nav{
 
     nav{
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         width: 100%;
         padding: 1rem;
+
         img{
             width: 20rem;
         }
 
         h1{
             display: flex;
+            
+        }
+
+        #list-nav{
+            display: none;
         }
     }
-
-    #cont-nav{
-        display: flex;
-        align-items: center;
-        gap: 10rem;
-    }
-    
-
 }
