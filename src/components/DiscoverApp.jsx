@@ -1,3 +1,4 @@
+import React from 'react'
 import "../styles/DiscoverApp.scss"
 import cell from "../assets/icon-cell.svg"
 import lupa from "../assets/icon-lupa.svg"

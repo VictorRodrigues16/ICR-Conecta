@@ -1,3 +1,4 @@
+import React from 'react'
 import "../styles/Information.scss"
 import info1 from "../assets/info1.svg"
 import info2 from "../assets/info2.svg"

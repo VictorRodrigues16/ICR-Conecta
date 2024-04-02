@@ -1,3 +1,4 @@
+import React from 'react'
 import "../styles/Footer.scss"
 import linkedin from "../assets/linkedin.svg"
 import insta from "../assets/insta.svg"

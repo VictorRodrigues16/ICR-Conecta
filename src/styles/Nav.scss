@@ -37,7 +37,9 @@ nav{
     display: flex;
     align-items: center;
     gap: 4rem;
-    
+    a {
+        text-decoration: none;
+    }
 }
 .nav-li{
     list-style: none;

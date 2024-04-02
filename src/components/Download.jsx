@@ -1,3 +1,4 @@
+import React from 'react'
 import "../styles/Download.scss"
 import doctor from "../assets/doctor.svg";
 

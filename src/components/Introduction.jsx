@@ -1,3 +1,4 @@
+import React from 'react'
 import "../styles/Introduction.scss"
 
 export default function Introduction() {

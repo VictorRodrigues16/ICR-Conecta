@@ -1,3 +1,4 @@
+import React from 'react'
 import "../styles/OurApp.scss"
 import cell from "../assets/cell-photo.svg"
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import "../styles/Forms.scss"
 import apple from "../assets/apple.svg"
 import google from "../assets/google.svg"
@@ -56,7 +57,7 @@ export default function Forms() {
 
                     
                     <div id="button-form">
-                    <button class="form-button" type="submit">ENVIAR MENSAGEM</button>
+                    <button className="form-button" type="submit">ENVIAR MENSAGEM</button>
                     </div>
                     
                 </form>
