@@ -14,7 +14,7 @@ section#form{
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    width: 100%;
+    width: 100vw;
 }
 #contact-us-tittle {
     display: flex;
@@ -177,8 +177,7 @@ div#forms-format {
     }
 }
 
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
 
     section#form{
         display: flex;
@@ -209,78 +208,41 @@ div#forms-format {
     }
 
     .form-input {
-        width: 36rem;
+        width: 50vw;
         height: 34px;
         padding: 1.3rem; 
-        border: none;
-        font-size: 1rem;
-        background-color: #FFF8E7;
-        color: #333;
         border-radius: 8px; 
         font-size: 1.2rem;
-        font-weight: bold;
-      }
 
-      
-
-      form{
-        display: flex;
-        align-items: center;
-        
       }
 
     .forms{
-        gap: 1.4rem;
+        align-items: center;
+        gap: 1.2rem;
     }
 
       #check{
-        display: flex;
-        gap: 1rem;
-
-    
         label{
             font-size: 1.1rem;
             text-align: center;
-            width: 33rem;
-            color: #676666;
-            padding-top: 1rem;
+            width: 50vw;
         }
       }
-    
-    .checkbox{
-        background-color: #D9D9D9;
-        font-size: 2rem;
-        padding: 5rem;
-    }
 
     #button-form{
-        display: flex;
-        flex-direction: row-reverse;
-        
-        
-    
         button{
             padding: 0.6rem 2rem;
-            display: flex;
-            justify-content: center;
-            background-color: #3284AE;
-            color: #FFF8E7;
-            font-family: Open Sans;
-            border: none;
             border-radius: 8px; 
-            cursor: pointer;
             font-size: 2rem;
-            transition: .6s;
-            font-weight: bold;
-    
-    
         }
+    }
     
-        button:hover{
-            background-color: #f3d795;
-            color: #3284AE;
-              
-        }
+}
+
+@media screen and (max-width: 500px) {
+
+    section#form{
+        width: 100vw;
     }
     
 }
