@@ -48,9 +48,9 @@ export default function Download() {
 
                     <div id="info-cont2">
                         <p>
-                            <span className="app">Explore recursos inovadores</span>
-                            <span className="app">e torne sua jornada mais fácil</span>
-                            <span className="app">e conveniente.</span> 
+                            <span id="line1" className="app">Explore recursos inovadores</span>
+                            <span id="line2" className="app">e torne sua jornada mais fácil</span>
+                            <span id="line3" className="app">e conveniente.</span> 
                         </p>
                         <button id="baixar-agora">BAIXE AGORA</button>
                     </div>

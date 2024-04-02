@@ -11,7 +11,16 @@
 
 section#download2{
     display: none;
-    
+
+    #cont2-2{
+        display: flex;
+        justify-content: center;
+
+
+        img{
+            width: 80vw;
+        }
+    }
 }
 
 section#download{
@@ -21,6 +30,10 @@ section#download{
     padding-top: 7rem;
     font-family: Nunito Sans;
     color: #001B42;
+
+    img{
+        width: 30vw;
+    }
 
     h1{
         display: flex;
@@ -79,14 +92,10 @@ section#download{
 
 @media screen and (max-width: 768px) {
     section#download{
-
         padding: 3rem;
         padding-top: 7rem;
 
-        img{
-            width: 25rem;
-        }
-
+       
         h1{
             display: flex;
             flex-direction: column;
@@ -140,6 +149,7 @@ section#download{
         padding: 5rem;
         padding-top: 3rem;
         font-family: Nunito Sans;
+        
 
         #cont-download2{
             display: flex;
@@ -172,7 +182,7 @@ section#download{
 
 
             img{
-                width: 14rem;
+                width: 40vw;
             }
 
             p{
@@ -189,10 +199,23 @@ section#download{
 
         #info-cont2{
             display: flex;
+            width: 100%;
             flex-direction: column;
             justify-content: center;
             padding-bottom: 3rem;
             gap: 2rem;
+            align-items: center;
+            
+
+            #line1{
+                width: 19rem;
+                align-self: center;
+            }
+
+            #line3{
+                width: 11rem;
+                align-self: center;
+            }
         }
         #baixar-agora{
             display: flex;
@@ -215,3 +238,8 @@ section#download{
 }
 
 
+@media screen and (max-width: 368px) {
+    span{
+        font-size: 1rem;
+    }
+}

@@ -13,18 +13,7 @@ export default function Footer() {
         <>
         <footer>
             <div id="content-left">
-                    <h2>Fale com a gente</h2>
-
-                    <div id="form-cont1">
-                        <p>
-                            Tire suas dúvidas e comece
-                            agora a usar o ICR Conecta!
-                        </p>
-                    </div>
-                    <div id="form-cont2">
-                        <p>(11) 5526-3500</p>
-                        <p>conecta@icr.com.br</p>
-                    </div>
+                    
                     
                     <div id="download-app">
                         <h1>Baixe o nosso app</h1>
