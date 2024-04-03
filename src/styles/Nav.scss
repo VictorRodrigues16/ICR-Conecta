@@ -1,204 +1,211 @@
+$font-size-small: 1.3rem;
+$font-size-medium: 1.7rem;
+$font-size-large: 2.5rem;
+$color-primary: #3284ae;
+$color-secondary: #056da1;
+$color-white: #fff8e7;
+$color-button-hover: #f3d795;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-nav{
-    display: flex;
-    justify-content:  space-around;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    width: 100%;
-
-    img{
-        width: 23rem;
-    }
-
-    h1{
-        display: none;
-    }
+html {
+  scroll-behavior: smooth;
 }
 
-
-#cont-nav{
-    display: flex;
-    gap: 4rem;
-    
+a {
+  text-decoration: none;
 }
 
-#list-nav{
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    a {
-        text-decoration: none;
-    }
-}
-.nav-li{
-    list-style: none;
-    font-family: Manrope;
-    color: #3284AE;
-    font-size: 2.5rem;
-    font-weight: 600;
-    transition: .2s;
-    cursor: pointer;
-    background-image: linear-gradient(to right, #056da1, #3284AE); 
-    background-repeat: no-repeat;
-    background-size: 0% 3px;
-    background-position: left bottom;
-    transition: .4s ease;
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
 
+  img {
+    width: 23rem;
+  }
+
+  h1 {
+    display: none;
+  }
 }
 
-.nav-li:hover{
+.hamburguer-icon {
+  display: none;
+}
+
+#cont-nav {
+  display: flex;
+  gap: 4rem;
+}
+
+.nav-li {
+  list-style: none;
+  font-family: Manrope;
+  color: $color-primary;
+  font-weight: 600;
+  font-size: $font-size-large;
+  transition: 0.2s;
+  cursor: pointer;
+  background-image: linear-gradient(to right, $color-secondary, $color-primary);
+  background-repeat: no-repeat;
+  background-size: 0% 3px;
+  background-position: left bottom;
+  transition: 0.4s ease;
+
+  &:hover {
     background-size: 100% 3px;
+  }
 }
 
-#nav-button{
-    height: 6rem;
-    width: calc(15% - 1rem);
-    background-color: #3284AE;
-    border: none;
-    border-radius: 7px;
-    color: #FFF8E7;
-    font-weight: bold;
-    font-family: Open Sans;
-    font-size: 2rem;
-    transition: .4s;
-    cursor: pointer;
+#nav-button {
+  height: 6rem;
+  width: calc(15% - 1rem);
+  background-color: $color-primary;
+  border: none;
+  border-radius: 7px;
+  color: $color-white;
+  font-weight: bold;
+  font-family: Open Sans;
+  font-size: 2rem;
+  transition: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-button-hover;
+    color: $color-primary;
+  }
 }
 
-#nav-button:hover{
-    background-color: #f3d795;
-    color: #3284AE;
+#list-nav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  transition: transform 0.3s ease-in-out;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 @media screen and (max-width: 830px) {
-    .nav-li{
-        font-size: 2rem;
-    }
+  .nav-li {
+    font-size: $font-size-medium;
+  }
 
-    #nav-button{
-        font-size: 1.5rem;
-    }
+  #nav-button {
+    font-size: 1.5rem;
+  }
+
+  .hamburguer-icon {
+    display: none;
+  }
 }
-
 
 @media screen and (max-width: 768px) {
-    nav{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1rem;
-        width: 100%;
-        gap: 0;
-    
-        img{
-            width: 16rem;
-        }
+  nav {
+    gap: 0;
 
-        
+    img {
+      width: 16rem;
+    }
+  }
 
-    }
+  .nav-li {
+    font-size: $font-size-medium;
+  }
 
-    .nav-li{
-        list-style: none;
-        font-family: Manrope;
-        color: #3284AE;
-        font-size: 1.7rem;
-        font-weight: 600;
-        cursor: pointer;
-        background-image: linear-gradient(to right, #056da1, #3284AE); 
-        background-repeat: no-repeat;
-        background-size: 0% 3px;
-        background-position: left bottom;
-        transition: .4s ease;
-    
-    }
+  #list-nav {
+    gap: 2rem;
+  }
 
-    .nav-li:hover{
-        background-size: 100% 2px;
-    }
+  #cont-nav {
+    gap: 2rem;
 
-    #list-nav{
-        display: flex;
-        align-items: center;
-        gap: 2rem;
+    .hamburguer-icon {
+      display: none;
     }
+  }
 
-    #cont-nav{
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    #nav-button{
-        padding: 0rem 2rem;
-        height: 5rem;
-        width: 20rem;
-        background-color: #3284AE;
-        border: none;
-        border-radius: 7px;
-        color: #FFF8E7;
-        font-weight: bold;
-        font-family: Open Sans;
-        font-size: 1.4rem;
-        transition: .4s;
-        cursor: pointer;
-    }
-    
-    #nav-button:hover{
-        background-color: #f3d795;
-        color: #3284AE;
-    }
+  #nav-button {
+    padding: 0rem 2rem;
+    height: 5rem;
+    width: 20rem;
+    font-size: 1.4rem;
+  }
 }
 
-
 @media screen and (max-width: 530px) {
-    #list-nav, button{
-        display: none;
-        
+  #nav-button {
+    display: none;
+  }
+
+  nav {
+    padding: 1rem;
+
+    img {
+      width: 20rem;
     }
 
-    nav{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding: 1rem;
-
-        img{
-            width: 20rem;
-        }
-
-        h1{
-            display: flex;
-            
-        }
-
-        #list-nav{
-            display: none;
-        }
+    h1 {
+      display: flex;
     }
+
+    .hamburguer-icon {
+      display: flex;
+      align-items: center;
+      background-color: $color-white;
+      border: none;
+      cursor: pointer;
+
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+
+    #cont-nav {
+      margin: 0 auto;
+
+      #list-nav {
+        flex-direction: column;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+
+        &.open {
+          transform: translateX(0);
+        }
+
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .nav-li{
-        
-        font-size: 1.3rem;
-        
-    
-    }
+  .nav-li {
+    font-size: $font-size-small;
+  }
 
-    #nav-button{
-        width: auto;
-        font-size: 1rem;
-    
-    }
+  #nav-button {
+    width: auto;
+    font-size: 1rem;
+  }
 }

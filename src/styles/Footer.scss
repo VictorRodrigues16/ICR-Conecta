@@ -8,7 +8,6 @@
     font-size: 62.5%;
 }
 
-
 footer{
     background-color: #3284AE;
     display: flex;
@@ -33,9 +32,6 @@ footer{
     }
 }
 
-
-
-
 #social-medias{
     display: flex;
     gap: 1rem;
@@ -56,23 +52,11 @@ footer{
 
 @media screen and (max-width: 768px) {
     footer{
-        
         #logo-icr{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-    }
-
-    #logo-icr{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        img{
-            width: calc(80% - 2rem);
-        }
     }
     }
 }
@@ -87,8 +71,6 @@ footer{
         gap: 0;
         justify-content: center;
         
-        
-
         #info-footer{
             display: none;
         }
@@ -107,7 +89,6 @@ footer{
     img {
         width: calc(35% - 2rem);
     }
-
 
     #download-app {
         display: flex;
@@ -132,8 +113,6 @@ footer{
             
         }
     }
-
-
 
     #logo-icr{
         display: flex;
@@ -161,6 +140,4 @@ footer{
             width: 3rem;
         }
     }
-
-
 }

@@ -1,247 +1,218 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-section#form{
-    font-family: Nunito Sans;
-    padding: 7rem;
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    width: 100vw;
+section#form {
+  font-family: Nunito Sans;
+  padding: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100vw;
 }
 #contact-us-tittle {
-    display: flex;
-    justify-content: center;
-    font-size: 6rem;
-    color: #3284AE;
+  display: flex;
+  justify-content: center;
+  font-size: 6rem;
+  color: #3284ae;
 }
 
-
-
 div#forms-format {
+  display: flex;
+  justify-content: space-around;
+
+  #message {
+    height: 24rem;
+  }
+
+  #content-left {
     display: flex;
-    justify-content: space-around;
-    
-    
+    flex-direction: column;
+    gap: 1.2rem;
 
-
-    #message {
-        height: 24rem;
+    #form-cont1 p {
+      width: 30rem;
+      font-size: 2.4rem;
+      font-weight: 600;
     }
 
-    #content-left {
-        display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-
-
-        #form-cont1 p{
-            width: 30rem;
-            font-size: 2.4rem;
-            font-weight: 600;
-        }
-
-        #form-cont2 p{
-            color: #FFA561;
-            font-size: 2.4rem;
-            font-weight: bold;
-        }
+    #form-cont2 p {
+      color: #ffa561;
+      font-size: 2.4rem;
+      font-weight: bold;
     }
+  }
 
+  h2 {
+    font-size: 4rem;
+    color: #3284ae;
+  }
 
-    h2 {
-        font-size: 4rem;
-        color: #3284AE;
-    }
-
-    
-
-    img {
-        width: 15rem;
-    }
+  img {
+    width: 15rem;
+  }
 }
 
 #download-app {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-    h1{
-        font-size: 2.6rem;
-        font-weight: bold;
-        padding-top: 1rem;  
-        color: #3284AE;
-    }
-}
-
-
-
-#down {
-    display: flex;
-    gap: 1.5rem;
-}
-
-
-
-
-#tittle-form{
-    display: flex;
-    font-size: 1.7rem;
-    flex-direction: column;
-    text-align: center;
-    color: aliceblue;
-  }
-
-  .forms {
-    border-radius: 30px; 
-    font-family: Open Sans;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-
-  
-  
-  .form-input {
-    width: 100%;
-    padding: 2rem; 
-    border: none;
-    font-size: 1rem;
-    background-color: #FFF8E7;
-    color: #333;
-    border-radius: 20px; 
+  h1 {
     font-size: 2.6rem;
     font-weight: bold;
+    padding-top: 1rem;
+    color: #3284ae;
   }
-  
-  textarea.form-input {
-    height: 6rem; 
-    font-family: Open Sans;
-  }
-  
-
-
-  #check{
-    display: flex;
-    gap: 1rem;
-
-    label{
-        font-size: 1.6rem;
-        color: #676666;
-    }
-  }
-
-.checkbox{
-    background-color: #D9D9D9;
-    font-size: 2rem;
-    padding: 5rem;
 }
-  
 
-#button-form{
+#down {
+  display: flex;
+  gap: 1.5rem;
+}
+
+#tittle-form {
+  display: flex;
+  font-size: 1.7rem;
+  flex-direction: column;
+  text-align: center;
+  color: aliceblue;
+}
+
+.forms {
+  border-radius: 30px;
+  font-family: Open Sans;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 2rem;
+  border: none;
+  font-size: 1rem;
+  background-color: #fff8e7;
+  color: #333;
+  border-radius: 20px;
+  font-size: 2.6rem;
+  font-weight: bold;
+}
+
+textarea.form-input {
+  height: 6rem;
+  font-family: Open Sans;
+}
+
+#check {
+  display: flex;
+  gap: 1rem;
+
+  label {
+    font-size: 1.6rem;
+    color: #676666;
+  }
+}
+
+.checkbox {
+  background-color: #d9d9d9;
+  font-size: 2rem;
+  padding: 5rem;
+}
+
+#button-form {
+  display: flex;
+  flex-direction: row-reverse;
+
+  button {
+    padding: 2rem 6.2rem;
     display: flex;
-    flex-direction: row-reverse;
-    
-    
+    justify-content: center;
+    background-color: #3284ae;
+    color: #fff8e7;
+    font-family: Open Sans;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: 0.6s;
+    font-size: 3rem;
+    font-weight: bold;
+  }
 
-    button{
-        padding: 2rem 6.2rem;
-        display: flex;
-        justify-content: center;
-        background-color: #3284AE;
-        color: #FFF8E7;
-        font-family: Open Sans;
-        border: none;
-        border-radius: 15px; 
-        cursor: pointer;
-        font-size: 1.3rem;
-        transition: .6s;
-        font-size: 3rem;
-        font-weight: bold;
-
-
-    }
-
-    button:hover{
-        background-color: #f3d795;
-        color: #3284AE;
-          
-    }
+  button:hover {
+    background-color: #f3d795;
+    color: #3284ae;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  section#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0rem 7rem 0rem;
+    gap: 3rem;
 
-    section#form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 4rem 0rem 7rem 0rem;
-        gap: 3rem;
-
-        h1{
-            text-align: center;
-            font-size: 3rem;
-            font-weight: bold;
-        }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
     }
-    div#forms-format{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  }
+  div#forms-format {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        #message{
-            height: 180px;
-          }
-
-        #content-left {
-            display: none;
-        }
+    #message {
+      height: 180px;
     }
 
-    .form-input {
-        width: 70vw;
-        height: 34px;
-        padding: 1.3rem; 
-        border-radius: 8px; 
-        font-size: 1.2rem;
-
-      }
-
-    .forms{
-        align-items: center;
-        gap: 1.2rem;
+    #content-left {
+      display: none;
     }
+  }
 
-      #check{
-        label{
-            font-size: 1.1rem;
-            text-align: center;
-            width: 50vw;
-        }
-      }
+  .form-input {
+    width: 50vw;
+    height: 34px;
+    padding: 1.3rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+  }
 
-    #button-form{
-        button{
-            padding: 0.6rem 2rem;
-            border-radius: 8px; 
-            font-size: 2rem;
-        }
+  .forms {
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  #check {
+    label {
+      font-size: 1.1rem;
+      text-align: center;
+      width: 50vw;
     }
-    
+  }
+
+  #button-form {
+    button {
+      padding: 0.6rem 2rem;
+      border-radius: 8px;
+      font-size: 2rem;
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
-    section#form{
-        width: 100vw;
-    }
-    
+  section#form {
+    width: 100vw;
+  }
 }
