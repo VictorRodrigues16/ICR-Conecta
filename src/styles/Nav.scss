@@ -169,13 +169,13 @@ nav {
     .hamburguer-icon {
       display: flex;
       align-items: center;
-      background-color: $color-white;
+      background-color: transparent;
       border: none;
       cursor: pointer;
 
       svg {
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 3.2rem;
+        height: 3.2rem;
       }
     }
 

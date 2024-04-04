@@ -23,7 +23,7 @@ export default function Nav() {
     }, [checkWindowSize]);
 
     const toggleMenu = useCallback(() => {
-        if (windowWidth <= 500) {
+        if (windowWidth <= 530) {
             setIsOpen(!isOpen);
         }
     }, [isOpen, windowWidth]);
@@ -31,9 +31,6 @@ export default function Nav() {
     return (
         <header>
             <nav>
-                <button onClick={toggleMenu} className="hamburguer-icon">
-                    <TiThMenu />
-                </button>
                 <div id="cont-nav">
                     <img id="icon-nav" src={img} alt="img-nav" />
                     <ul id="list-nav" className={isOpen ? "open" : "hidden"}>
@@ -44,6 +41,10 @@ export default function Nav() {
                     </ul>
                 </div>
                 <button id="nav-button">BAIXE O APLICATIVO</button>
+
+                <button onClick={toggleMenu} className="hamburguer-icon">
+                    <TiThMenu />
+                </button>
             </nav>
         </header>
     );
