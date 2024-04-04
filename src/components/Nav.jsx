@@ -35,7 +35,7 @@ export default function Nav() {
                     <img id="icon-nav" src={img} alt="img-nav" />
                     <ul id="list-nav" className={isOpen ? "open" : "hidden"}>
                         <MenuItem href="#Ourapp">Início</MenuItem>
-                        <MenuItem href="#info-app">Sobre o ICR</MenuItem>
+                        <MenuItem href="#discover">Sobre o ICR</MenuItem>
                         <MenuItem href="#information">Blog</MenuItem>
                         <MenuItem href="#form">Contato</MenuItem>
                     </ul>
