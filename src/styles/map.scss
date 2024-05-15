@@ -1,0 +1,32 @@
+section#map{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    background-color: #fff;
+
+    h1{
+        font-size: 7rem;
+        font-weight: bold;
+        color: #3284ae;
+    }
+
+    .map-container{
+        width: 129rem;
+        height: 64rem;
+
+        div#info{
+          width: 18rem;
+
+          h3{
+            font-size: 1.4rem;
+            font-weight: 450;
+          }
+        }
+    }
+
+
+}

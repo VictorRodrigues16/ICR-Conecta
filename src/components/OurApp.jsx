@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/OurApp.scss"
-import cell from "../assets/cell-photo.svg"
+import doctor from "../assets/doctor.svg"
 
 export default function  OurApp() {
     return (
@@ -15,9 +15,7 @@ export default function  OurApp() {
                 </div>
                 <div id="tittle2">
                     <p>
-                        Uma comunidade solidária, onde pacientes 
-                        podem se conectar, trocar experiências e 
-                        encontrar conforto durante suas jornadas de saúde.
+                        Um aplicativo dedicado a mantê-lo informado sobre seus exames, tratamentos e aperfeiçoar sua experiência no ICR.
                     </p>
                 </div>
                 <div id="tittle3">
@@ -25,7 +23,7 @@ export default function  OurApp() {
                 </div>
             </div>
 
-            <img id="cell-app" src={cell} alt="cell-app" />
+            <img id="cell-app" src={doctor} alt="doctor-cell" />
         
         </section>
         

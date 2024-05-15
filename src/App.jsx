@@ -1,29 +1,16 @@
-import Nav from "./components/Nav"
-import Introduction from "./components/Introduction"
-import OurApp from "./components/OurApp"
-import DiscoverApp from "./components/DiscoverApp"
-import Download from "./components/Download"
-import Information from "./components/Information"
-import Forms from "./components/Forms"
-import Footer from "./components/Footer"
-
-
+import {} from "react";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  
-
   return (
     <>
-      <Nav/>
-      <Introduction/>
-      <OurApp/>
-      <DiscoverApp/>
-      <Download/>
-      <Information/>
-      <Forms/>
-      <Footer/>
+      <Nav />
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
