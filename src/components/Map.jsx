@@ -11,7 +11,7 @@ import {
 
 export default function Maps() {
   const position = { lat: -23.55558042209387, lng: -46.672813238287496 };
-  const API_KEY = "AIzaSyC_x81o317a6-6O9ryd3JpcB8861VzHW-s";
+  const API_KEY = "";
   const mapId = "4ed6f628888d633d";
   let zoom = 17;
 
