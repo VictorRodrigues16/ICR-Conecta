@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import "../styles/Nav.scss";
 import img from "../assets/nav-icon.svg";
 import { TiThMenu } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const MenuItem = ({ href, children }) => (
     <a href={href}>
@@ -34,9 +35,9 @@ export default function Nav() {
                 <div id="cont-nav">
                     <img id="icon-nav" src={img} alt="img-nav" />
                     <ul id="list-nav" className={isOpen ? "open" : "hidden"}>
-                        <MenuItem href="#Ourapp">Início</MenuItem>
-                        <MenuItem href="#discover">Sobre o ICR</MenuItem>
-                        <MenuItem href="#information">Blog</MenuItem>
+                        <MenuItem><Link to="/" className="Link">Início</Link></MenuItem>
+                        <MenuItem href="#Ourapp">Sobre o ICR</MenuItem>
+                        <MenuItem><Link to="/exames" className="Link">Exames</Link></MenuItem>
                         <MenuItem href="#form">Contato</MenuItem>
                     </ul>
                 </div>

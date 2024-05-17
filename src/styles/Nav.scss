@@ -64,6 +64,10 @@ nav {
   background-position: left bottom;
   transition: 0.4s ease;
 
+  .Link{
+    color: $color-primary;
+  }
+
   &:hover {
     background-size: 100% 3px;
   }
@@ -96,10 +100,6 @@ nav {
 
   &.open {
     transform: translateX(0);
-  }
-
-  a {
-    text-decoration: none;
   }
 }
 
