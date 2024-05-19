@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import hemograma from "../assets/hemograma.svg";
 import urina from "../assets/urina.svg";
@@ -17,41 +17,49 @@ export default function Exames() {
   const senha = useRef();
   const navigate = useNavigate();
 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [editPopupOpen, setEditPopupOpen] = useState(false);
   const [addPopupOpen, setAddPopupOpen] = useState(false);
-  const [products, setProducts] = useState([
-    { id: 1, imgSrc: hemograma, title: "Hemograma Completo", recommendation: "Recomendação: Jejum de 6 horas", risk: "Risco: Livre de riscos" },
-    { id: 2, imgSrc: urina, title: "Coleta de Urina", recommendation: "Recomendação: A primeira urina da manhã", risk: "Risco: Livre de riscos" },
-    { id: 3, imgSrc: radiografia, title: "Radiografia de Tórax", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Exposição pequena a radiação " },
-    { id: 4, imgSrc: ultrassomAbs, title: "Ultrassonografia Abdominal", recommendation: "Recomendação: Jejum de 6 horas", risk: "Risco: Livre de riscos" },
-    { id: 5, imgSrc: audiometria, title: "Audiometria", recommendation: "Recomendação: Ambiente calmo ", risk: "Risco: Livre de riscos" },
-    { id: 6, imgSrc: pezinho, title: "Teste do Pezinho", recommendation: "Recomendação: Realizar no 3º dia após nascimento", risk: "Risco: Livre de riscos" },
-    { id: 7, imgSrc: eletrocardiograma, title: "Eletrocardiograma", recommendation: "Recomendação: Ambiente calmo", risk: "Risco: Livre de riscos" },
-    { id: 8, imgSrc: parasitologo, title: "Parasitológico", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Livre de riscos" },
-    { id: 9, imgSrc: ultrassomQuad, title: "Ultrassonografia de Quadril", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Livre de riscos" },
-  ]);
+  const [products, setProducts] = useState(() => {
+    const storedProducts = localStorage.getItem("products");
+    return storedProducts ? JSON.parse(storedProducts) : [
+      { id: 1, imgSrc: hemograma, title: "Hemograma Completo", recommendation: "Recomendação: Jejum de 6 horas", risk: "Risco: Livre de riscos" },
+      { id: 2, imgSrc: urina, title: "Coleta de Urina", recommendation: "Recomendação: A primeira urina da manhã", risk: "Risco: Livre de riscos" },
+      { id: 3, imgSrc: radiografia, title: "Radiografia de Tórax", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Exposição pequena a radiação " },
+      { id: 4, imgSrc: ultrassomAbs, title: "Ultrassonografia Abdominal", recommendation: "Recomendação: Jejum de 6 horas", risk: "Risco: Livre de riscos" },
+      { id: 5, imgSrc: audiometria, title: "Audiometria", recommendation: "Recomendação: Ambiente calmo ", risk: "Risco: Livre de riscos" },
+      { id: 6, imgSrc: pezinho, title: "Teste do Pezinho", recommendation: "Recomendação: Realizar no 3º dia após nascimento", risk: "Risco: Livre de riscos" },
+      { id: 7, imgSrc: eletrocardiograma, title: "Eletrocardiograma", recommendation: "Recomendação: Ambiente calmo", risk: "Risco: Livre de riscos" },
+      { id: 8, imgSrc: parasitologo, title: "Parasitológico", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Livre de riscos" },
+      { id: 9, imgSrc: ultrassomQuad, title: "Ultrassonografia de Quadril", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Livre de riscos" },
+    ];
+  });
 
-  const getUsuario = sessionStorage.getItem("usuario");
-  const getSenha = sessionStorage.getItem("senha");
+  useEffect(() => {
+    localStorage.setItem("products", JSON.stringify(products));
+  }, [products]);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     if (usuario.current.value === "Admin" && senha.current.value === "12345") {
       const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
       sessionStorage.setItem("usuario", "Admin");
       sessionStorage.setItem("senha", token);
-      console.log(senha)
+      setIsAuthenticated(true); // Define como autenticado após o login bem-sucedido
     } else {
-      alert("Usuario e senha Inválidos !!!");
+      alert("Usuário e senha inválidos!");
     }
   };
 
   const handleLogout = () => {
     sessionStorage.removeItem("usuario");
     sessionStorage.removeItem("senha");
+    setIsAuthenticated(false); // Define como não autenticado após o logout
     alert("Saindo do sistema...");
     navigate("/exames");
-  };
+  }; 
 
   const handleEdit = (product) => {
     setSelectedProduct(product);
@@ -74,10 +82,29 @@ export default function Exames() {
     setAddPopupOpen(false);
   };
 
-  const handleSave = (newProduct) => {
-    setProducts((prevProducts) => [...prevProducts, newProduct]);
-    setAddPopupOpen(false);
+  const handleSave = async () => {
+    const img = document.getElementById("img").value;
+    const title = document.getElementById("title").value;
+    const recommendation = document.getElementById("recommendation").value;
+    const risk = document.getElementById("risk").value;
+  
+    try {
+      const resizedImgSrc = await resizeImage(img, 312, 222);
+      const newProduct = {
+        id: products.length + 1,
+        imgSrc: resizedImgSrc,
+        title: title,
+        recommendation: recommendation,
+        risk: risk
+      };
+      setProducts((prevProducts) => [...prevProducts, newProduct]);
+      setAddPopupOpen(false);
+    } catch (error) {
+      alert("Falha ao carregar a imagem. Verifique a URL e tente novamente.");
+    }
   };
+  
+  
 
   const handleUpdate = () => {
     const index = products.findIndex((p) => p.id === selectedProduct.id);
@@ -89,6 +116,23 @@ export default function Exames() {
     updatedProducts[index] = selectedProduct;
     setProducts(updatedProducts);
     setEditPopupOpen(false);
+  };
+
+  const resizeImage = (src, width, height) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = "Anonymous"; // Permite CORS se a imagem estiver hospedada em outro domínio
+      img.src = src;
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, width, height);
+        resolve(canvas.toDataURL());
+      };
+      img.onerror = (err) => reject(err);
+    });
   };
 
   const [open, setOpen] = useState(false);
@@ -105,7 +149,7 @@ export default function Exames() {
                 <button onClick={handleAdd} className="displayToggle" id="cadastro_button">Cadastrar Exames</button>
               </>
             ) : (
-              <button onClick={() => setOpen(true)}id="cadastro_button">Login</button>
+              <button onClick={() => setOpen(true)} id="cadastro_button">Login</button>
             )}
             <Model isOpen={open}>
               <form onSubmit={handleSubmit}>
@@ -125,7 +169,6 @@ export default function Exames() {
               <button onClick={() => setOpen(false)}>close form</button>
             </Model>
           </div>
-
 
           <div id="produtos-new">
             {products.map((product) => (
@@ -191,20 +234,11 @@ export default function Exames() {
             <input type="text" id="img" />
             <label>Produto:</label>
             <input type="text" id="title" />
-            <label>Recomendação::</label>
+            <label>Recomendação:</label>
             <input type="text" id="recommendation" />
             <label>Risco:</label>
             <input type="text" id="risk" />
-            <button
-              onClick={() =>
-                handleSave({
-                  imgSrc: document.getElementById("img").value,
-                  title: document.getElementById("title").value,
-                  recommendation: document.getElementById("recommendation").value,
-                  risk: document.getElementById("risk").value,
-                })
-              }
-            >
+            <button onClick={handleSave}>
               Salvar
             </button>
             <button onClick={handleCloseAddPopup}>Cancelar</button>

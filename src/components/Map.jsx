@@ -20,7 +20,7 @@ export default function Maps() {
   return (
     <>
       <section id="map">
-        <h1>COMO CHEGAR</h1>
+        <h1 id="title-map">COMO CHEGAR</h1>
 
         <APIProvider apiKey={API_KEY}>
           <div className="map-container">
