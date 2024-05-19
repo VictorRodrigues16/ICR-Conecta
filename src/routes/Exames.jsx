@@ -40,6 +40,7 @@ export default function Exames() {
       const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
       sessionStorage.setItem("usuario", "Admin");
       sessionStorage.setItem("senha", token);
+      console.log(senha)
     } else {
       alert("Usuario e senha Inválidos !!!");
     }
@@ -97,14 +98,14 @@ export default function Exames() {
       <section className="exames">
         <div className="produtos-group1">
           <div id="tittle-produto">
-            <h1>Exames</h1>
+            <h1 id="title-primaary">Exames</h1>
             {getUsuario && getSenha ? (
               <>
-                <button onClick={handleLogout}>Logout</button>
-                <button onClick={handleAdd} className="displayToggle">Cadastrar Exames</button>
+                <button onClick={handleLogout} id="cadastro_button">Logout</button>
+                <button onClick={handleAdd} className="displayToggle" id="cadastro_button">Cadastrar Exames</button>
               </>
             ) : (
-              <button onClick={() => setOpen(true)}>Login</button>
+              <button onClick={() => setOpen(true)}id="cadastro_button">Login</button>
             )}
             <Model isOpen={open}>
               <form onSubmit={handleSubmit}>
@@ -131,11 +132,14 @@ export default function Exames() {
               <div key={product.id} className="product-card">
                 <img src={product.imgSrc} alt={product.title} className="img-product" />
                 <div id="title">{product.title}</div>
-                <div id="recommendation">{product.recommendation}</div>
-                <div id="risk">{product.risk}</div>
+                <div id="sub-cont-prod">
+                  <div id="recommendation">{product.recommendation}</div>
+                  <div id="risk">{product.risk}</div>
+                </div>
+                
                 {getUsuario && getSenha && (
                   <div className="btn-edit">
-                    <button onClick={() => handleEdit(product)} className="btn-prod">Edit</button>
+                    <button onClick={() => handleEdit(product)} className="btn-prod">Editar</button>
                     <button onClick={() => handleDelete(product)} className="btn-prod">Delete</button>
                   </div>
                 )}

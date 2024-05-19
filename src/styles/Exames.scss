@@ -1,3 +1,14 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
 .exames {
   display: grid;
   gap: 5rem;
@@ -5,11 +16,36 @@
   background-color: #FFF8E7;
   padding: 10rem 10rem 5rem;
   width: 100vw;
+  font-family: 'Open Sans';
 
   h1 {
     font-size: 7rem;
     font-weight: bold;
     color: #3284ae;
+
+  }
+
+  #tittle-produto{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    #cadastro_button{
+      background-color: #3284ae;
+      border: none;
+      border-radius: 7px;
+      font-weight: bold;
+      font-size: 2rem;
+      color: #fff8e7;
+      padding: 1rem 2rem;
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    #cadastro_button:hover{
+      background-color: #f3d795;
+      color: #3284ae;
+    }
   }
 
   #button-logout {
@@ -47,11 +83,34 @@
       .product-card{
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         text-align: left;
         padding: 2rem;
         border-radius: .5rem;
         background-color: #fff;
+        font-family: 'Open Sans';
+        color: #001B42;
+        gap: 1.5rem;
+
+        #sub-cont-prod{
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        #title{
+          font-size: 2.4rem;
+          font-weight: bold; 
+        }
+
+        #recommendation, #risk{
+          font-size: 1.6rem;
+          font-weight: 600;
+        }
+
+      
       }
+
     }
   }
 }
@@ -109,12 +168,25 @@
 }
 
 .btn-prod {
-  padding: 1rem 2rem;
-  width: 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 45%;
+  font-family: 'Open Sans';
+  color: #001B42;
+  padding: 0.2rem 0.8rem;
+  border: none;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.btn-prod:hover{
+  background-color: #001B42;
+  color: #f4f4f4;
 }
 
 .btn-edit {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
