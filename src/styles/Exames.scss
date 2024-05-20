@@ -1,21 +1,9 @@
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  font-size: 62.5%;
-}
-
 .exames {
   display: grid;
   gap: 5rem;
   text-align: center;
   background-color: #FFF8E7;
   padding: 10rem 10rem 5rem;
-  width: 100vw;
   font-family: 'Open Sans';
 
   h1 {
@@ -96,19 +84,17 @@
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
+
+          #recommendation, #risk{
+            font-size: 1.6rem;
+            font-weight: 600;
+          }
         }
 
         #title{
           font-size: 2.4rem;
           font-weight: bold; 
         }
-
-        #recommendation, #risk{
-          font-size: 1.6rem;
-          font-weight: 600;
-        }
-
-      
       }
 
     }
@@ -190,3 +176,67 @@
   align-items: center;
   gap: 1rem;
 }
+
+#login-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+
+  .login-popup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 999;
+    width: 300px;
+  
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+  
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #btns{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #btn-close{
+      background: transparent;
+    }
+  
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+

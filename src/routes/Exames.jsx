@@ -17,24 +17,89 @@ export default function Exames() {
   const senha = useRef();
   const navigate = useNavigate();
 
+  const getUsuario = sessionStorage.getItem("usuario");
+  const getSenha = sessionStorage.getItem("senha");
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const [title, setTitle] = useState("");
+  const [recommendation, setRecommendation] = useState("");
+  const [risk, setRisk] = useState("");
+  const [img, setImg] = useState("");
 
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [editPopupOpen, setEditPopupOpen] = useState(false);
   const [addPopupOpen, setAddPopupOpen] = useState(false);
+  const [loginPopupOpen, setLoginPopupOpen] = useState(false);
   const [products, setProducts] = useState(() => {
     const storedProducts = localStorage.getItem("products");
-    return storedProducts ? JSON.parse(storedProducts) : [
-      { id: 1, imgSrc: hemograma, title: "Hemograma Completo", recommendation: "Recomendação: Jejum de 6 horas", risk: "Risco: Livre de riscos" },
-      { id: 2, imgSrc: urina, title: "Coleta de Urina", recommendation: "Recomendação: A primeira urina da manhã", risk: "Risco: Livre de riscos" },
-      { id: 3, imgSrc: radiografia, title: "Radiografia de Tórax", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Exposição pequena a radiação " },
-      { id: 4, imgSrc: ultrassomAbs, title: "Ultrassonografia Abdominal", recommendation: "Recomendação: Jejum de 6 horas", risk: "Risco: Livre de riscos" },
-      { id: 5, imgSrc: audiometria, title: "Audiometria", recommendation: "Recomendação: Ambiente calmo ", risk: "Risco: Livre de riscos" },
-      { id: 6, imgSrc: pezinho, title: "Teste do Pezinho", recommendation: "Recomendação: Realizar no 3º dia após nascimento", risk: "Risco: Livre de riscos" },
-      { id: 7, imgSrc: eletrocardiograma, title: "Eletrocardiograma", recommendation: "Recomendação: Ambiente calmo", risk: "Risco: Livre de riscos" },
-      { id: 8, imgSrc: parasitologo, title: "Parasitológico", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Livre de riscos" },
-      { id: 9, imgSrc: ultrassomQuad, title: "Ultrassonografia de Quadril", recommendation: "Recomendação: Nenhuma específica", risk: "Risco: Livre de riscos" },
-    ];
+    return storedProducts
+      ? JSON.parse(storedProducts)
+      : [
+          {
+            id: 1,
+            imgSrc: hemograma,
+            title: "Hemograma Completo",
+            recommendation: "Recomendação: Jejum de 6 horas",
+            risk: "Risco: Livre de riscos",
+          },
+          {
+            id: 2,
+            imgSrc: urina,
+            title: "Coleta de Urina",
+            recommendation: "Recomendação: A primeira urina da manhã",
+            risk: "Risco: Livre de riscos",
+          },
+          {
+            id: 3,
+            imgSrc: radiografia,
+            title: "Radiografia de Tórax",
+            recommendation: "Recomendação: Nenhuma específica",
+            risk: "Risco: Exposição pequena a radiação ",
+          },
+          {
+            id: 4,
+            imgSrc: ultrassomAbs,
+            title: "Ultrassonografia Abdominal",
+            recommendation: "Recomendação: Jejum de 6 horas",
+            risk: "Risco: Livre de riscos",
+          },
+          {
+            id: 5,
+            imgSrc: audiometria,
+            title: "Audiometria",
+            recommendation: "Recomendação: Ambiente calmo ",
+            risk: "Risco: Livre de riscos",
+          },
+          {
+            id: 6,
+            imgSrc: pezinho,
+            title: "Teste do Pezinho",
+            recommendation: "Recomendação: Realizar no 3º dia após nascimento",
+            risk: "Risco: Livre de riscos",
+          },
+          {
+            id: 7,
+            imgSrc: eletrocardiograma,
+            title: "Eletrocardiograma",
+            recommendation: "Recomendação: Ambiente calmo",
+            risk: "Risco: Livre de riscos",
+          },
+          {
+            id: 8,
+            imgSrc: parasitologo,
+            title: "Parasitológico",
+            recommendation: "Recomendação: Nenhuma específica",
+            risk: "Risco: Livre de riscos",
+          },
+          {
+            id: 9,
+            imgSrc: ultrassomQuad,
+            title: "Ultrassonografia de Quadril",
+            recommendation: "Recomendação: Nenhuma específica",
+            risk: "Risco: Livre de riscos",
+          },
+        ];
   });
 
   useEffect(() => {
@@ -42,9 +107,10 @@ export default function Exames() {
   }, [products]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     if (usuario.current.value === "Admin" && senha.current.value === "12345") {
-      const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+      const token =
+        Math.random().toString(16).substring(2) +
+        Math.random().toString(16).substring(2);
       sessionStorage.setItem("usuario", "Admin");
       sessionStorage.setItem("senha", token);
       setIsAuthenticated(true); // Define como autenticado após o login bem-sucedido
@@ -59,7 +125,7 @@ export default function Exames() {
     setIsAuthenticated(false); // Define como não autenticado após o logout
     alert("Saindo do sistema...");
     navigate("/exames");
-  }; 
+  };
 
   const handleEdit = (product) => {
     setSelectedProduct(product);
@@ -78,16 +144,19 @@ export default function Exames() {
     setAddPopupOpen(true);
   };
 
+  const handleLogin = () => {
+    setLoginPopupOpen(true);
+  };
+
+  const handleCloseLogin = () => {
+    setLoginPopupOpen(false);
+  };
+
   const handleCloseAddPopup = () => {
     setAddPopupOpen(false);
   };
 
   const handleSave = async () => {
-    const img = document.getElementById("img").value;
-    const title = document.getElementById("title").value;
-    const recommendation = document.getElementById("recommendation").value;
-    const risk = document.getElementById("risk").value;
-  
     try {
       const resizedImgSrc = await resizeImage(img, 312, 222);
       const newProduct = {
@@ -95,7 +164,7 @@ export default function Exames() {
         imgSrc: resizedImgSrc,
         title: title,
         recommendation: recommendation,
-        risk: risk
+        risk: risk,
       };
       setProducts((prevProducts) => [...prevProducts, newProduct]);
       setAddPopupOpen(false);
@@ -103,8 +172,6 @@ export default function Exames() {
       alert("Falha ao carregar a imagem. Verifique a URL e tente novamente.");
     }
   };
-  
-  
 
   const handleUpdate = () => {
     const index = products.findIndex((p) => p.id === selectedProduct.id);
@@ -118,23 +185,6 @@ export default function Exames() {
     setEditPopupOpen(false);
   };
 
-  const resizeImage = (src, width, height) => {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.crossOrigin = "Anonymous"; // Permite CORS se a imagem estiver hospedada em outro domínio
-      img.src = src;
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, width, height);
-        resolve(canvas.toDataURL());
-      };
-      img.onerror = (err) => reject(err);
-    });
-  };
-
   const [open, setOpen] = useState(false);
 
   return (
@@ -145,45 +195,82 @@ export default function Exames() {
             <h1 id="title-primaary">Exames</h1>
             {getUsuario && getSenha ? (
               <>
-                <button onClick={handleLogout} id="cadastro_button">Logout</button>
-                <button onClick={handleAdd} className="displayToggle" id="cadastro_button">Cadastrar Exames</button>
+                <button onClick={handleLogout} id="cadastro_button">
+                  Logout
+                </button>
+                <button
+                  onClick={handleAdd}
+                  className="displayToggle"
+                  id="cadastro_button"
+                >
+                  Cadastrar Exames
+                </button>
               </>
             ) : (
-              <button onClick={() => setOpen(true)} id="cadastro_button">Login</button>
+              <button onClick={handleLogin} id="cadastro_button">
+                Login
+              </button>
             )}
-            <Model isOpen={open}>
-              <form onSubmit={handleSubmit}>
-                <h1 className="tittle">Sign In</h1>
-                <p>
-                  USUÁRIO <br />
-                  <input type="text" placeholder="Digite seu Usuário" ref={usuario} />
-                </p>
-                <p>
-                  SENHA <br />
-                  <input type="password" placeholder="Digite sua senha" ref={senha} />
-                </p>
-                <button className="btn_enter" type="submit">
-                  <strong>ENTRAR</strong>
-                </button>
-              </form>
-              <button onClick={() => setOpen(false)}>close form</button>
-            </Model>
+
+            {loginPopupOpen && (
+              <div id="login-popup-overlay">
+                <form className="login-popup" onSubmit={handleSubmit}>
+                  <h2 className="tittle">Sign In</h2>
+                  <label>Usuário</label>
+                  <input
+                    type="text"
+                    placeholder="Digite seu Usuário"
+                    ref={usuario}
+                  />
+
+                  <label>Senha</label>
+                  <input
+                    type="password"
+                    placeholder="Digite sua senha"
+                    ref={senha}
+                  />
+
+                  <div id="btns">
+                    <button className="btn_enter" type="submit">
+                      <strong>ENTRAR</strong>
+                    </button>
+                    <button id="btn-close" onClick={handleCloseLogin}>
+                      X
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
           </div>
 
           <div id="produtos-new">
             {products.map((product) => (
               <div key={product.id} className="product-card">
-                <img src={product.imgSrc} alt={product.title} className="img-product" />
+                <img
+                  src={product.imgSrc}
+                  alt={product.title}
+                  className="img-product"
+                />
                 <div id="title">{product.title}</div>
                 <div id="sub-cont-prod">
                   <div id="recommendation">{product.recommendation}</div>
                   <div id="risk">{product.risk}</div>
                 </div>
-                
+
                 {getUsuario && getSenha && (
                   <div className="btn-edit">
-                    <button onClick={() => handleEdit(product)} className="btn-prod">Editar</button>
-                    <button onClick={() => handleDelete(product)} className="btn-prod">Delete</button>
+                    <button
+                      onClick={() => handleEdit(product)}
+                      className="btn-prod"
+                    >
+                      Editar
+                    </button>
+                    <button
+                      onClick={() => handleDelete(product)}
+                      className="btn-prod"
+                    >
+                      Delete
+                    </button>
                   </div>
                 )}
               </div>
@@ -201,7 +288,10 @@ export default function Exames() {
               type="text"
               value={selectedProduct.title}
               onChange={(e) =>
-                setSelectedProduct((prevProduct) => ({ ...prevProduct, title: e.target.value }))
+                setSelectedProduct((prevProduct) => ({
+                  ...prevProduct,
+                  title: e.target.value,
+                }))
               }
             />
             <label>Descrição</label>
@@ -209,7 +299,10 @@ export default function Exames() {
               type="text"
               value={selectedProduct.recommendation}
               onChange={(e) =>
-                setSelectedProduct((prevProduct) => ({ ...prevProduct, recommendation: e.target.value }))
+                setSelectedProduct((prevProduct) => ({
+                  ...prevProduct,
+                  recommendation: e.target.value,
+                }))
               }
             />
             <label>Preço:</label>
@@ -217,7 +310,10 @@ export default function Exames() {
               type="text"
               value={selectedProduct.risk}
               onChange={(e) =>
-                setSelectedProduct((prevProduct) => ({ ...prevProduct, risk: e.target.value }))
+                setSelectedProduct((prevProduct) => ({
+                  ...prevProduct,
+                  risk: e.target.value,
+                }))
               }
             />
             <button onClick={handleUpdate}>Atualizar</button>
@@ -231,16 +327,34 @@ export default function Exames() {
           <div className="edit-popup">
             <h2>Adicionar produto</h2>
             <label>Imagem em URL:</label>
-            <input type="text" id="img" />
+            <input
+              type="text"
+              id="img"
+              value={img}
+              onChange={(e) => setImg(e.target.value)}
+            />
             <label>Produto:</label>
-            <input type="text" id="title" />
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
             <label>Recomendação:</label>
-            <input type="text" id="recommendation" />
+            <input
+              type="text"
+              id="recommendation"
+              value={recommendation}
+              onChange={(e) => setRecommendation(e.target.value)}
+            />
             <label>Risco:</label>
-            <input type="text" id="risk" />
-            <button onClick={handleSave}>
-              Salvar
-            </button>
+            <input
+              type="text"
+              id="risk"
+              value={risk}
+              onChange={(e) => setRisk(e.target.value)}
+            />
+            <button onClick={handleSave}>Salvar</button>
             <button onClick={handleCloseAddPopup}>Cancelar</button>
           </div>
         </div>
