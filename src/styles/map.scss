@@ -1,33 +1,74 @@
-section#map{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
-    background-color: #fff;
-    font-family: 'Open Sans';
+section#map {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  background-color: #fff;
+  font-family: 'Open Sans';
 
-    h1{
-        font-size: 7rem;
-        font-weight: bold;
-        color: #3284ae;
-    }
+  h1 {
+      font-size: 7rem;
+      font-weight: bold;
+      color: #3284ae;
+  }
 
-    .map-container{
-        width: 129rem;
-        height: 64rem;
+  .map-container {
+      width: 129rem;
+      height: 64rem;
 
-        div#info{
+      div#info {
           width: 18rem;
 
-          h3{
-            font-size: 1.4rem;
-            font-weight: 450;
+          h3 {
+              font-size: 1.4rem;
+              font-weight: 450;
           }
-        }
-    }
+      }
+  }
+  
 
+  @media (max-width: 1200px) {
+      gap: 5rem;
 
+      h1 {
+          font-size: 5rem;
+      }
+
+      .map-container {
+          width: 100%;
+          height: 48rem;
+
+          div#info {
+              width: 15rem;
+
+              h3 {
+                  font-size: 1.2rem;
+              }
+          }
+      }
+  }
+
+  @media (max-width: 500px) {
+      gap: 3rem;
+
+      h1 {
+          font-size: 3.5rem;
+      }
+
+      .map-container {
+          width: 100%;
+          height: 32rem;
+
+          div#info {
+              width: 12rem;
+
+              h3 {
+                  font-size: 1rem;
+              }
+          }
+      }
+  }
 }
