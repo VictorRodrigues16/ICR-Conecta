@@ -158,10 +158,9 @@ export default function Exames() {
 
   const handleSave = async () => {
     try {
-      const resizedImgSrc = await resizeImage(img, 312, 222);
       const newProduct = {
         id: products.length + 1,
-        imgSrc: resizedImgSrc,
+        imgSrc: img,
         title: title,
         recommendation: recommendation,
         risk: risk,
