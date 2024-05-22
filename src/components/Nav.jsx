@@ -2,12 +2,13 @@ import React, { useState, useEffect, useCallback } from "react";
 import "../styles/Nav.scss";
 import img from "../assets/nav-icon.svg";
 import { TiThMenu } from "react-icons/ti";
+import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const MenuItem = ({ href, children }) => (
-    <a href={href}>
-        <li className="nav-li">{children}</li>
-    </a>
+    <li className="nav-li">
+        {href ? <a href={href}>{children}</a> : children}
+    </li>
 );
 
 export default function Nav() {
@@ -24,25 +25,32 @@ export default function Nav() {
     }, [checkWindowSize]);
 
     const toggleMenu = useCallback(() => {
+        const listNav = document.getElementById("list-nav");
         if (windowWidth <= 530) {
             setIsOpen(!isOpen);
         }
-    }, [isOpen, windowWidth]);
+        if (isOpen) {
+            listNav.style.display = "none";
+        }else{
+            listNav.style.display = "flex";
+        } [isOpen, windowWidth]});
+
 
     return (
         <header>
             <nav>
                 <div id="cont-nav">
                     <img id="icon-nav" src={img} alt="img-nav" />
-                    <ul id="list-nav" className={isOpen ? "open" : "hidden"}>
+                    <ul id="list-nav" className={isOpen ? "open" : ""}>
+                        <button onClick={toggleMenu} className="close-icon">
+                            <AiOutlineClose />
+                        </button>
                         <MenuItem><Link to="/" className="Link">Início</Link></MenuItem>
                         <MenuItem href="/#Ourapp">Sobre o ICR</MenuItem>
                         <MenuItem><Link to="/exames" className="Link">Exames</Link></MenuItem>
                         <MenuItem href="/#form">Contato</MenuItem>
                     </ul>
                 </div>
-                <button id="nav-button">BAIXE O APLICATIVO</button>
-
                 <button onClick={toggleMenu} className="hamburguer-icon">
                     <TiThMenu />
                 </button>
