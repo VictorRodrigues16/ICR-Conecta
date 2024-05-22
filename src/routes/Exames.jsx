@@ -11,6 +11,7 @@ import parasitologo from "../assets/parasitologo.svg";
 import ultrassomQuad from "../assets/ultrassom-quadril.svg";
 import Model from "react-modal";
 import "../styles/Exames.scss";
+import Button from 'react-bootstrap/Button';
 
 export default function Exames() {
   const usuario = useRef();
@@ -194,16 +195,22 @@ export default function Exames() {
             <h1 id="title-primaary">Exames</h1>
             {getUsuario && getSenha ? (
               <>
-                <button onClick={handleLogout} id="cadastro_button">
+              <Button 
+                onClick={handleLogout} 
+                id="cadastro_button" 
+                variant="primary">
                   Logout
-                </button>
-                <button
-                  onClick={handleAdd}
-                  className="displayToggle"
-                  id="cadastro_button"
-                >
+              </Button>{' '}
+
+              <Button 
+                onClick={handleAdd} 
+                className="displayToggle" 
+                id="cadastro_button" 
+                variant="primary">
                   Cadastrar Exames
-                </button>
+              </Button>{' '}
+                
+
               </>
             ) : (
               <button onClick={handleLogin} id="cadastro_button">

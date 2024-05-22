@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import "../styles/Forms.scss";
 import apple from "../assets/apple.svg";
 import google from "../assets/google.svg";
+import Button from 'react-bootstrap/Button';
 
 export default function Forms() {
   const formRef = useRef();
@@ -106,7 +107,7 @@ export default function Forms() {
             </div>
 
             <div id="button-form">
-                <button className="form-button" type="submit">ENVIAR MENSAGEM</button>
+                <Button className="form-button" type="submit" variant="primary">Enviar Mensagem</Button>{' '}
             </div>
           </form>
         </div>

@@ -8,6 +8,13 @@ import email from "../assets/email.svg"
 import logo from "../assets/logo-icr.svg"
 import apple from "../assets/apple.svg"
 import google from "../assets/google.svg"
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa6";
+import { CiMail } from "react-icons/ci";
+
+
 
 export default function Footer() {
     return (
@@ -27,11 +34,11 @@ export default function Footer() {
 
             <div id="cont-footer">
                 <div id="social-medias">
-                    <img src={linkedin} alt="linkedin" />
-                    <img src={insta} alt="instagram" />
-                    <img src={face} alt="facebook" />
-                    <img src={wpp} alt="whatsapp" />
-                    <img src={email} alt="e-mail" />
+                    <FaLinkedin id='imgf'/>
+                    <FaInstagram id='imgf'/>
+                    <FaFacebookSquare id='imgf'/>
+                    <FaWhatsapp id='imgf'/>
+                    <CiMail id='imgf'/>
                 </div>
                 <div id="logo-icr">
                     <img src={logo} alt="logo-icr" />

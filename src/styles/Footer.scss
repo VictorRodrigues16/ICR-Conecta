@@ -34,11 +34,12 @@ footer{
 
 #social-medias{
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
 
-    img{
-        width: 10rem;
+    #imgf{
+        font-size: 5rem;
+        color: #fff;
     }
 }
 
@@ -58,6 +59,12 @@ footer{
             align-items: center;
             justify-content: center;
     }
+
+    }
+
+    #imgf{
+        font-size: 2rem;
+        color: #fff;
     }
 }
 

@@ -28,12 +28,13 @@ export default function Nav() {
         const listNav = document.getElementById("list-nav");
         if (windowWidth <= 530) {
             setIsOpen(!isOpen);
+            if (isOpen) {
+                listNav.style.display = "none";
+            }else{
+                listNav.style.display = "flex";
+            } 
         }
-        if (isOpen) {
-            listNav.style.display = "none";
-        }else{
-            listNav.style.display = "flex";
-        } [isOpen, windowWidth]});
+        [isOpen, windowWidth]});
 
 
     return (
